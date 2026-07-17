@@ -30,6 +30,3 @@ class Contact
 };
 
 #endif
-
-// Os métodos get precisaram de alguma informação especifica? uma verificação
-// se o conteúdo existe?

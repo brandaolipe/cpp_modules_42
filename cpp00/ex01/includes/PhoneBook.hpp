@@ -1,17 +1,21 @@
 #ifndef	PHONEBOOK_HPP
 #define	PHONEBOOK_HPP
 
+#include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook
 {
 	private:
 		Contact	_contact_list[8];
+		int		_size;
 
 	public:
 		PhoneBook();
 		~PhoneBook();
 		void	add_contact(Contact &new_contact);
+		void	search_contact();
 		/* metodo ADD: inserir as informacoes do novo contato um campo
 		por vez */
 
