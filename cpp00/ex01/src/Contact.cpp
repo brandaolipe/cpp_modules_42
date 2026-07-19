@@ -2,15 +2,15 @@
 
 Contact::Contact(
 	std::string name,
-	std::string last_name,
+	std::string lastname,
 	std::string nickname,
 	std::string secret,
 	std::string phone_number)
-	: _name(name),
-	  _last_name(last_name),
-	  _nickname(nickname),
-	  _secret(secret),
-	  _phone_number(phone_number) {}
+	: name_(name),
+	  last_name_(lastname),
+	  nickname_(nickname),
+	  secret_(secret),
+	  phone_number_(phone_number) {}
 
 Contact::Contact() {}
 
@@ -18,25 +18,25 @@ Contact::~Contact() {}
 
 std::string Contact::get_name() const
 {
-	return (_name);
+	return (name_);
 }
 
 std::string Contact::get_last_name() const
 {
-	return (_last_name);
+	return (last_name_);
 }
 
 std::string Contact::get_nickname() const
 {
-	return (_nickname);
+	return (nickname_);
 }
 
 std::string Contact::get_secret() const
 {
-	return (_secret);
+	return (secret_);
 }
 
 std::string Contact::get_phone_number() const
 {
-	return (_phone_number);
+	return (phone_number_);
 }
