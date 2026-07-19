@@ -6,16 +6,16 @@
 class Contact
 {
 	private:
-		std::string	_name;
-		std::string	_last_name;
-		std::string _nickname;
-		std::string	_secret;
-		std::string _phone_number;
+		std::string	name_;
+		std::string	last_name_;
+		std::string nickname_;
+		std::string	secret_;
+		std::string phone_number_;
 
 	public:
 		Contact(
 			std::string name,
-			std::string last_name,
+			std::string last_name_,
 			std::string nickname,
 			std::string secret,
 			std::string	phone_number
