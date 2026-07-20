@@ -9,8 +9,8 @@ Contact::Contact(
 	: name_(name),
 	  last_name_(lastname),
 	  nickname_(nickname),
-	  secret_(secret),
-	  phone_number_(phone_number) {}
+	  phone_number_(phone_number),
+	  secret_(secret) {}
 
 Contact::Contact() {}
 

@@ -9,16 +9,16 @@ class Contact
 		std::string	name_;
 		std::string	last_name_;
 		std::string nickname_;
-		std::string	secret_;
 		std::string phone_number_;
+		std::string	secret_;
 
 	public:
 		Contact(
 			std::string name,
 			std::string last_name_,
 			std::string nickname,
-			std::string secret,
-			std::string	phone_number
+			std::string	phone_number,
+			std::string secret
 		);
 		Contact();
 		~Contact();
