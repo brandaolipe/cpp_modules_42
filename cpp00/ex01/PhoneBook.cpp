@@ -1,6 +1,6 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : size_(0) {}
+PhoneBook::PhoneBook() : size_(0), index_(0) {}
 PhoneBook::~PhoneBook() {}
 
 void	PhoneBook::add_contact(Contact &new_contact)
@@ -22,25 +22,25 @@ void	PhoneBook::search_contact()
 	}
 	else
 	{
-		std::cout << std::setw(10) << "Index|"
-				<< std::setw(10) << "First name|"
-				<< std::setw(10) << "Last name|"
-				<< std::setw(10) << "Nickname|"
+		std::cout << std::setw(10) << "Index" << "|"
+				<< std::setw(10) << "First name" << "|"
+				<< std::setw(10) << "Last name" << "|"
+				<< std::setw(10) << "Nickname" << "|"
 				<< std::endl;
 	}
 	for (int i = 0; i < size_; i++)
 	{
-		std::cout << std::setw(10) << i << "|" 
-				<< truncate_(contact_list_[i].get_name()) << "|"
-				<< truncate_(contact_list_[i].get_last_name()) << "|"
-				<< truncate_(contact_list_[i].get_nickname()) << "|"
+		std::cout << std::setw(10) << i << "|"
+				<< std::setw(10) << truncate_(contact_list_[i].get_name()) << "|"
+				<< std::setw(10) << truncate_(contact_list_[i].get_last_name()) << "|"
+				<< std::setw(10) << truncate_(contact_list_[i].get_nickname()) << "|"
 				<< std::endl;
 	}
 	std::cout << "Index: ";
 	std::getline(std::cin, target_id);
 	std::stringstream stream_id(target_id);
 
-	if (stream_id >> nb_id && (nb_id > 0 && nb_id < size_))
+	if (stream_id >> nb_id && (nb_id >= 0 && nb_id < size_))
 	{
 		std::cout << "First name: " + contact_list_[nb_id].get_name() << std::endl;
 		std::cout << "Last name: " + contact_list_[nb_id].get_last_name() << std::endl;
