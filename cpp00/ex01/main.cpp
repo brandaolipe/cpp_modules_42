@@ -10,7 +10,8 @@ static std::string	get_value(std::string varname_)
 	while (true)
 	{
 		std::cout << varname_ + ": ";
-		std::getline(std::cin, variable);
+		if (!std::getline(std::cin, variable))
+			return "void";
 		if (variable.empty())
 			std::cout << "Empty field" << std::endl;
 		else
@@ -26,7 +27,11 @@ int	main(void)
 	do
 	{
 		std::cout << "Insert a command: (ADD, SEARCH, EXIT)\n";
-		std::getline(std::cin, action);
+		if (!std::getline(std::cin, action))
+		{
+			std::cout << "Exiting." << std::endl;
+			break ;
+		}
 		if (action == "ADD")
 		{
 			std::string	name = get_value("Name");
@@ -51,5 +56,3 @@ int	main(void)
  
 	return (0);
 }
-
-//	std::cin.eof() - to handle ctrl + D

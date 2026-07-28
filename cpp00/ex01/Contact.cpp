@@ -4,8 +4,8 @@ Contact::Contact(
 	std::string name,
 	std::string lastname,
 	std::string nickname,
-	std::string secret,
-	std::string phone_number)
+	std::string phone_number,
+	std::string secret)
 	: name_(name),
 	  last_name_(lastname),
 	  nickname_(nickname),
