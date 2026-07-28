@@ -29,7 +29,7 @@ void	Account::makeDeposit(int deposit)
 
 	this->_amount += deposit;
 	_totalAmount += deposit;
-	_nbDeposits++;
+	this->_nbDeposits++;
 	_totalNbDeposits++;
 
 	Account::_displayTimestamp();
@@ -51,7 +51,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	{
 		this->_amount -= withdrawal;
 		_totalAmount -= withdrawal;
-		_nbWithdrawals++;
+		this->_nbWithdrawals++;
 		_totalNbWithdrawals++;
 		std::cout << "withdrawal:" << withdrawal << ";"
 			<< "amount:" << this->_amount << ";"
