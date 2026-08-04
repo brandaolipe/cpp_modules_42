@@ -6,7 +6,7 @@ void	replace_content(std::string &filename, std::string &target, std::string &re
 {
 	std::ifstream	source(filename.c_str());
 	std::string new_file = filename + ".replace";
-	std::ofstream	dest((new_file).c_str());
+	std::ofstream	dest(new_file.c_str());
 	std::string	line;
 	std::size_t	pos_match;
 
@@ -45,22 +45,18 @@ int	main(int ac, char **av)
 		std::string target = av[2];
 		std::string replace = av[3];
 
-		std::ifstream	source(filename);
+		std::ifstream	source(filename.c_str());
 		
 		if (source.is_open())
 		{
-			//std::string line;
-			//std::getline(source, line);
-			//source.close();
 			replace_content(filename, target, replace);
 		}
 		else
 		{
-			std::cerr << "The file cannot be opened." << std::endl;
+			std::cerr << "The file " << filename << " cannot be opened." << std::endl;
 			return (1);
 		}
 
 	}
 	return (0);
 }
-
