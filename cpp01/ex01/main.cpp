@@ -4,7 +4,7 @@ int	main(void)
 {
 	int	N = 5;
 
-	Zombie* horde = zombieHorde(5, "steve");
+	Zombie* horde = zombieHorde(N, "steve");
 	for (int i = 0; i < N; i++)
 	{
 		std::cout << "Zombie id:" << i << " named ";
