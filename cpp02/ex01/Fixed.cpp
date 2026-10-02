@@ -13,7 +13,7 @@ Fixed::Fixed(const Fixed& src)
 
 Fixed::Fixed(const int nb)
 {
-	_fx_point_nb = nb << _fract_part;
+	_fx_point_nb = nb * (1 << _fract_part);
 	std::cout << "Int constructor called" << std::endl;  
 }
 
