@@ -92,6 +92,7 @@ bool	Fixed::operator!=(Fixed const &src) const
 }
 
 // Arithmetic operators
+
 Fixed	Fixed::operator*(Fixed const &src) const
 {
 	Fixed	result;
@@ -125,6 +126,7 @@ Fixed	Fixed::operator-(Fixed const &src) const
 }
 
 // Increment/decrement operator
+
 Fixed	Fixed::operator++(int)
 {
 	Fixed	temp(*this);

@@ -1,4 +1,4 @@
-NAME = nowTalking
+NAME = mathOperations
 
 CPP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
