@@ -1,4 +1,4 @@
-NAME = animal
+NAME = brain
 
 CPP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
@@ -9,9 +9,11 @@ SRCS =	Animal.cpp \
 		Cat.cpp \
 		WrongCat.cpp \
 		WrongAnimal.cpp \
+		Brain.cpp \
 		main.cpp
 
-HEADERS = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+HEADERS = Animal.hpp Dog.hpp Cat.hpp \
+		WrongAnimal.hpp WrongCat.hpp Brain.hpp
 		
 OBJDIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJDIR)/%.o)

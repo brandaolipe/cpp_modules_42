@@ -1,30 +1,45 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
+#include <iostream>
 
-int	main(void)
+int main()
 {
-	const Animal*	animal = new Animal();
-	const Animal* 	dog = new Dog();
-	const Animal*	cat = new Cat();
+    std::cout << "=== Teste 1: array de Animals ===" << std::endl;
+    const int size = 8;
+    Animal* animals[size];
 
-	std::cout << dog->getType() << " " << std::endl;
-	std::cout << cat->getType() << " " << std::endl;
-	animal->makeSound();
-	dog->makeSound();
-	cat->makeSound();
+	for (int i = 0; i < size; i++)
+	{
+		if (i < size / 2)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+    }
 
-	delete animal;
-	delete dog;
-	delete cat;
+    for (int i = 0; i < size; i++) {
+        animals[i]->makeSound();
+	}
 
-	const WrongAnimal*	wcat = new WrongCat();
-	const WrongAnimal*	wanimal = new WrongAnimal();
+    for (int i = 0; i < size; i++) {
+        delete animals[i];
+	}
 
-	wcat->makeSound();
-	wanimal->makeSound();
+	Cat	one;
+	Cat	two;
 
-	return (0);
+	std::cout << "\none brain pointer: " << one.getBrain() << std::endl;
+	std::cout << "two brain pointer: " << two.getBrain() << std::endl;
+
+	std::cout << "\nIdeas before change:" << std::endl;
+	std::cout << "one ideas[0]: " << one.getBrain()->getIdea(0) << std::endl;
+	std::cout << "two ideas[0]: " << two.getBrain()->getIdea(0) << std::endl;
+
+	one.getBrain()->setIdea(0, "run away");
+	std::cout << "\nIdeas after change:" << std::endl;
+	std::cout << "one ideas[0]: " << one.getBrain()->getIdea(0) << std::endl;
+	std::cout << "two ideas[0]: " << two.getBrain()->getIdea(0) << std::endl;
+
+    return 0;
 }
