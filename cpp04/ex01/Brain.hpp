@@ -12,6 +12,9 @@ class Brain
 		Brain	&operator=(const Brain& src);
 		~Brain();
 
+		void	setIdea(int idx, const std::string& idea);
+		std::string	getIdea(int idx);
+
 	private:
 		static const int	_max_ideas = 100;
 		std::string			_ideas[_max_ideas];
