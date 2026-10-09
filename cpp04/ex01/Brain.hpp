@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Animal.hpp"
 
 class Brain
 {
@@ -13,7 +14,7 @@ class Brain
 		~Brain();
 
 		void	setIdea(int idx, const std::string& idea);
-		std::string	getIdea(int idx);
+		std::string	getIdea(int idx) const;
 
 	private:
 		static const int	_max_ideas = 100;

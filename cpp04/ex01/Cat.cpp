@@ -2,9 +2,9 @@
 
 Cat::Cat() : Animal("Cat")
 {
-    brain = new Brain();
     std::cout << GREEN << "Cat default constructor called."
         << RESET << std::endl;
+    this->brain = new Brain();
 }
 
 Cat::Cat(const Cat& src) : Animal(src)
@@ -21,8 +21,9 @@ Cat	&Cat::operator=(const Cat& src)
     if (this != &src)
     {
         Animal::operator=(src);
-        delete this->brain;
-        this->brain = new Brain(*other.brain);
+		Brain* newBrain = new Brain(*src.brain);
+		delete this->brain;
+		this->brain = newBrain;
     }
     return (*this);
 }

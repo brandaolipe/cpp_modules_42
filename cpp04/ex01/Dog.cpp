@@ -4,6 +4,7 @@ Dog::Dog() : Animal("Dog")
 {
 	std::cout << GREEN << "Dog default constructor called."
         << RESET << std::endl;
+	this->brain = new Brain();
 }
 
 Dog::Dog(const Dog& src) : Animal(src)
@@ -20,8 +21,9 @@ Dog	&Dog::operator=(const Dog& src)
 	if (this != &src)
 	{
 		Animal::operator=(src);
+		Brain* newBrain = new Brain(*src.brain);
 		delete this->brain;
-		this->brain = new Brain(*other.brain);
+		this->brain = newBrain;
 	}
 	return (*this);
 }
