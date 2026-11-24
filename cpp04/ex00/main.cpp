@@ -26,5 +26,8 @@ int	main(void)
 	wcat->makeSound();
 	wanimal->makeSound();
 
+	delete wcat;
+	delete wanimal;
+
 	return (0);
 }
